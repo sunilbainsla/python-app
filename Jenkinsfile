@@ -1,13 +1,12 @@
 pipeline {
-    agent any
-
+    agent { any { image 'python:3.6.6' } }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                echo 'Building..'
+                sh 'python --version'
             }
         }
-        stage('Test') {
+		 stage('Test') {
             steps {
                 echo 'Testing..'
             }
