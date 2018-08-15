@@ -3,13 +3,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'python -m py_compile D:/GitLloyds/Python/python-app/*.py'
             }
         }
 		 stage('Test') {
-            steps {
-                echo 'Testing..'
+		 steps {
+                echo 'Testing....'
             }
+
+			
         }
         stage('Deploy') {
             steps {
