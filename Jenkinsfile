@@ -1,5 +1,5 @@
 pipeline {
-    agent { any { image 'python:3.6.6' } }
+    agent { dockerfile true }
     stages {
         stage('build') {
             steps {
@@ -9,6 +9,7 @@ pipeline {
 		 stage('Test') {
 		 steps {
                 echo 'Testing....'
+				sh 'echo myCustomEnvVar=$myCustomEnvVar'
             }
 
 			
