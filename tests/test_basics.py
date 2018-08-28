@@ -1,8 +1,8 @@
 import unittest
-import basics
+import sapient.basics as bas
 class KnownValues(unittest.TestCase):
     def test_my_function(self):
-        result =basics.my_function("SunilKumar")
+        result =bas.my_function("SunilKumar")
         expected="SunilKumar Refsnes"
         self.assertEqual(expected,result)
         

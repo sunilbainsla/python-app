@@ -1,18 +1,21 @@
 import csv
-import pymongo
+import time
+
+import config as cfg
 
 try:
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["mydatabase"]
-    mycol = mydb["MIP"]
-    with open('D:\MIP\Manchester-housing.xlsx') as csvfile:
+   with open(cfg.csvrawfile_location) as csvfile:
         reader = csv.DictReader(csvfile)
-        for row in reader:
-            x=mycol.insert_one(row)
-            print(row)
-except mydb.error as e:
-    mycol.rollback()
+        #for i, row in reader:
+        for i, row in enumerate(reader):
+            if row["Vancouver"] is None or row["Vancouver"] == "":
+                print("12")
+            if i<2:
+                print(row)
+            else:
+                break
+except:
+    csvfile.close()
     raise
 finally:
-    myclient.close()
     csvfile.close()
