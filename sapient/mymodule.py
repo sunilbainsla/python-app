@@ -1,4 +1,3 @@
-import basics as bs
 import platform
 import datetime
 x = datetime.datetime.now()
