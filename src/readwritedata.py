@@ -14,11 +14,4 @@ class readwritedata:
         data = data.groupby(['datetime']).agg({"ds":"first", "Year":"first", "Vancouver":"sum", "Portland":"sum", "San Francisco":"sum", "Seattle":"sum"})
         print(data)
         data.to_csv(cfg.csvactualfile_location, index=False)
-    
-    try:
-        generate_csv(cfg.csvrawfile_location)
-    except :
-        print("Exception")
-        raise
-    finally:
-        print("final")
+        return 1

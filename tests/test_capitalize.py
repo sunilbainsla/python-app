@@ -1,5 +1,4 @@
 import pytest
-import readwritedata
 def test_capital_case():
     assert capital_case('semaphore') == 'Semaphore'
 

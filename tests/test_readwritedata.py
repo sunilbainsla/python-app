@@ -1,12 +1,9 @@
 import pytest
-import readwritedata
+from src.readwritedata import readwritedata
+import src.config as config
+
+def test_one():
+     assert 1
 
 def test_generate_csv():
-    """_asdict() should return a dictionary."""
-    t_task = readwritedata()
-    t_dict = t_task.generate_csv("D:\GitLloyds\Python\python-app\raw.csv")
-    expected = {'summary': 'do something',
-                'owner': 'okken',
-                'done': True,
-                'id': 21}
-    assert t_dict == expected
+    assert readwritedata.generate_csv('D:/GitLloyds/Python/python-app2/src/raw.csv')
